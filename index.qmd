@@ -12,22 +12,27 @@ title: "Advanced Natural Language and Multimedia Processing Lab"
 </style>
 ```
 
-The **A**dvanced **N**atural **LA**nguage and **M**ultimedia Processing **Lab** is part of the Software Engineering Department at [Ankara University](https://www.ankara.edu.tr)  , dedicated to advancing research in Natural Language Processing (NLP) and multimedia technologies. The lab was established in 2024 and focuses on cutting-edge AI research, particularly in NLP, multimedia processing, and their intersection. Our work spans various domains, with current projects including (in no particular order):
+The **A**dvanced **N**atural **LA**nguage and **M**ultimedia Processing **Lab** is part of the Software Engineering Department at [Ankara University](https://www.ankara.edu.tr) , dedicated to advancing research in Natural Language Processing (NLP) and multimedia technologies. The lab was established in 2024 and focuses on cutting-edge AI research, particularly in NLP, multimedia processing, and their intersection. Our work spans various domains, with current projects including (in no particular order):
 
 - Enhancing the adaptability of Large Language Models across diverse applications
 - Evaluating the robustness and accuracy of NLP systems
 - Developing novel language models and learning techniques for handling long and complex documents
 - Advancing multi-document and extreme multi-document NLP processing methods
-- Creating reliable and efficient techniques for content generation and summarization
+- Creating reliable and efficient techniques for content generation and summarisation
 - Exploring applications in multimedia and domain-specific texts
 
-For those interested in collaborating or joining our lab, please get in touch via [Contact](contact.qmd) Page.
+For those interested in collaborating or joining our lab, please contact us via the [Contact](contact.qmd) Page.
 
  
-## Latest News
+## Latest News  
+
+
+<div class="news-announcement"> 
+  **20 May '25** – Thrilled to share our latest work on improving Turkish Sentiment Analysis with fine-tuned LLMs! We combined GPT-based relabeling with Lora fine-tuning on models such as Llama-3 and Gemma, achieving state-of-the-art results on Turkish e-commerce reviews and outperforming commercial LLMs by over 6%. Early Access Paper here: [Link](https://ieeexplore.ieee.org/document/10980352)
+</div>
 
 <div class="news-announcement">
-  **12 Sep '24**-We are pleased to announce that our research project has been awarded a funding by the Deanship of Scientific Research (DSR) at King Abdulaziz University under grant no. GPIP: 1789-612-2024.
+  **12 Sep '24**-We are pleased to announce that our research project has been awarded funding by the Deanship of Scientific Research (DSR) at King Abdulaziz University under grant no. GPIP: 1789-612-2024.
   <ul>
     <li>Assoc. Prof. Murat Karakus from Software Engineering, Ankara University</li>
     <li>Dr. Rukiye Savran Kızıltepe from Software Engineering, Karadeniz Technical University</li>
