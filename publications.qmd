@@ -11,7 +11,7 @@ title: "Publications"
 ```  
 ## 2025
 
--Savran Kiziltepe, R, Ezin, E Yentur, Ö, Basbrain, A, M & Karakus, M, 2025, Advancing Sentiment Analysis for Low-Resource Languages Using Fine-Tuned LLMs: A Case Study of Customer Reviews in Turkish Language . in: IEEE Access, Vol. 13, pp. 77382–77394. DOI: 10.1109/ACCESS.2025.3566000
+- Savran Kiziltepe, R, Ezin, E Yentur, Ö, Basbrain, A, M & Karakus, M, 2025, Advancing Sentiment Analysis for Low-Resource Languages Using Fine-Tuned LLMs: A Case Study of Customer Reviews in Turkish Language . in: IEEE Access, Vol. 13, pp. 77382–77394. DOI: 10.1109/ACCESS.2025.3566000
 (SCI-E Indexed Journal)
 
 
