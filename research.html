@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — ANLAM-Net Lab</title>
+  <meta name="description" content="Research areas at ANLAM-Net Lab: Large Language Models, Sentiment Analysis, Summarization, Multimedia AI, NLP Evaluation, and Content Generation." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <img src="logo.png" alt="ANLAM-Net Lab logo" />
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">ANLAM-Net <span style="color:rgba(0,48,128,0.55);font-weight:500;">Lab</span></span>
+        <span class="nav-logo-sub">Ankara University</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="team.html">People</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Overview</a><a href="research.html" class="active">Research</a>
+  <a href="team.html">People</a><a href="publications.html">Publications</a>
+  <a href="news.html">News</a><a href="outreach.html">Outreach</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <canvas id="pageCanvas" style="position:absolute;inset:0;opacity:0.25;"></canvas>
+  <div class="page-hero-geometry">
+    <svg style="position:absolute;right:-40px;bottom:-40px;width:360px;height:360px;" viewBox="0 0 360 360" fill="none">
+      <circle cx="180" cy="180" r="160" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="180" cy="180" r="110" stroke="rgba(255,255,255,0.035)" stroke-width="0.8"/>
+      <polygon points="180,20 313,248 47,248" stroke="rgba(255,255,255,0.06)" stroke-width="0.8" fill="none"/>
+      <line x1="180" y1="20" x2="180" y2="248" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+    </svg>
+  </div>
+  <div class="wrap page-hero-inner">
+    <p class="ph-kicker">ANLAM-Net Lab · Research Programme</p>
+    <h1 class="ph-title">Research Areas</h1>
+    <p class="ph-sub">Six interconnected research strands spanning language models, multimedia intelligence, and evaluation science.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-num">01</span>
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">Research Agenda</span>
+    </div>
+
+    <div class="reveal">
+      <div class="bento r01-bento">
+        <div class="bc bc-dark bc-12 r01-card">
+          <div class="r01-main">
+            <div class="r01-code">R · 01</div>
+            <h3 class="r01-title">Large Language Models</h3>
+            <p class="r01-desc">We advance the adaptability, robustness, and efficiency of large language models across diverse domains and languages. Our work spans parameter-efficient fine-tuning (LoRA, QLoRA, adapters), cross-lingual transfer, instruction-following, alignment, and comprehensive evaluation, with strong focus on Turkish and morphologically complex languages.</p>
+            <div class="r01-points">
+              <div>Turkish LLM Benchmarking Suite</div>
+              <div>Domain-Adaptive Fine-tuning</div>
+              <div>Instruction Alignment for Low-resource Languages</div>
+            </div>
+            <div class="bc-tags">
+              <span class="bc-tag">Fine-tuning</span>
+              <span class="bc-tag">LoRA / QLoRA</span>
+              <span class="bc-tag">Turkish NLP</span>
+              <span class="bc-tag">RLHF / DPO</span>
+              <span class="bc-tag">Cross-lingual</span>
+              <span class="bc-tag">LLM Evaluation</span>
+            </div>
+          </div>
+          <div class="r01-photo">
+            <img
+              src="turing.png.webp"
+              alt="Historic computing and Alan Turing portrait"
+              class="r01-photo-img"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="ra">
+        <div class="ra-code">R · 02</div>
+        <div>
+          <div class="ra-title">Sentiment &amp; Opinion Analysis</div>
+          <div class="ra-desc">Fine-grained multimodal opinion mining targeting Turkish and multilingual social media, product reviews, and multimedia content. We combine textual, visual, and acoustic modalities with aspect-level annotation schemes to produce nuanced sentiment models that operate across languages and media types.</div>
+          <div class="ra-projects">
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Multimodal Aspect-level Sentiment</h4>
+                <p>Joint modeling of text, image, and audio for aspect-based sentiment prediction — fusing cross-modal attention with aspect-specific pooling mechanisms.</p>
+              </div>
+            </div>
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Turkish Social Media Sentiment Corpus</h4>
+                <p>Construction of a large-scale, aspect-annotated Turkish social media dataset for benchmarking NLP systems on morphologically rich text.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ra-tags">
+            <span class="ra-tag">Aspect-level SA</span>
+            <span class="ra-tag">Multimodal Fusion</span>
+            <span class="ra-tag">Turkish</span>
+            <span class="ra-tag">Cross-modal Attention</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ra">
+        <div class="ra-code">R · 03</div>
+        <div>
+          <div class="ra-title">Document Summarization</div>
+          <div class="ra-desc">Abstractive and hybrid summarization for long, complex, and multi-document settings. We develop hierarchical transformer architectures that scale to thousands of tokens, with attention to coherence, factual accuracy, and cross-document discourse modeling.</div>
+          <div class="ra-projects">
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Extreme Multi-Document Summarization</h4>
+                <p>Hierarchical encoder architectures that aggregate information across dozens of source documents while maintaining factual grounding and attribution.</p>
+              </div>
+            </div>
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Long-Context Summarization</h4>
+                <p>Efficient attention mechanisms and memory-augmented transformers for processing 10k+ token inputs in legal and scientific document summarization.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ra-tags">
+            <span class="ra-tag">Abstractive</span>
+            <span class="ra-tag">Multi-document</span>
+            <span class="ra-tag">Long Context</span>
+            <span class="ra-tag">Hierarchical Transformers</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ra">
+        <div class="ra-code">R · 04</div>
+        <div>
+          <div class="ra-title">NLP Evaluation &amp; Robustness</div>
+          <div class="ra-desc">Developing comprehensive benchmarks and evaluation methodologies that measure NLP system robustness under distribution shift, adversarial perturbations, and out-of-distribution inputs. We focus on linguistically diverse evaluation sets and automatic metric design beyond BLEU and ROUGE.</div>
+          <div class="ra-projects">
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Turkish NLP Benchmark Suite (TurkBench)</h4>
+                <p>A multi-task evaluation framework for Turkish covering QA, NER, NLI, summarization, and generation with rigorous human validation protocols.</p>
+              </div>
+            </div>
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Robustness Under Adversarial Conditions</h4>
+                <p>Systematic stress-testing of NLP models using character-level attacks, paraphrase-based perturbations, and domain-shift evaluation scenarios.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ra-tags">
+            <span class="ra-tag">Benchmarking</span>
+            <span class="ra-tag">Adversarial NLP</span>
+            <span class="ra-tag">Automatic Metrics</span>
+            <span class="ra-tag">Distribution Shift</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ra">
+        <div class="ra-code">R · 05</div>
+        <div>
+          <div class="ra-title">Multimedia Processing</div>
+          <div class="ra-desc">Cross-modal learning integrating text, image, audio, and video modalities. We design joint embedding spaces and fusion architectures for visual question answering, video captioning, audio-visual sentiment analysis, and cross-modal retrieval at scale.</div>
+          <div class="ra-projects">
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Audio-Visual Sentiment Analysis</h4>
+                <p>Fusion of speech prosody, facial expression, and text for fine-grained multimodal sentiment prediction in video content.</p>
+              </div>
+            </div>
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Cross-Modal Retrieval</h4>
+                <p>Contrastive learning approaches for aligning text and visual representations, enabling zero-shot retrieval across modalities.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ra-tags">
+            <span class="ra-tag">Vision-Language</span>
+            <span class="ra-tag">Audio-Visual</span>
+            <span class="ra-tag">Contrastive Learning</span>
+            <span class="ra-tag">Multimodal Retrieval</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ra" style="border-bottom:none;">
+        <div class="ra-code">R · 06</div>
+        <div>
+          <div class="ra-title">Content Generation</div>
+          <div class="ra-desc">Reliable, factual, and controllable text generation targeting hallucination reduction, factuality grounding, and domain-specific content synthesis. We develop RAG pipelines, constrained decoding methods, and factual verification systems for high-stakes generation scenarios.</div>
+          <div class="ra-projects">
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Retrieval-Augmented Generation (RAG)</h4>
+                <p>Dense retrieval systems coupled with generative models for knowledge-grounded text synthesis in domain-specific and multilingual settings.</p>
+              </div>
+            </div>
+            <div class="ra-proj">
+              <div class="ra-dot"></div>
+              <div>
+                <h4>Hallucination Detection &amp; Mitigation</h4>
+                <p>Taxonomy and mitigation strategies for factual hallucinations in neural text generation, including post-hoc verification and constrained decoding.</p>
+              </div>
+            </div>
+          </div>
+          <div class="ra-tags">
+            <span class="ra-tag">RAG</span>
+            <span class="ra-tag">Factuality</span>
+            <span class="ra-tag">Hallucination</span>
+            <span class="ra-tag">Controlled Generation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-off">
+  <div class="wrap">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-num">02</span>
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">Methodology</span>
+    </div>
+    <div class="method-grid reveal">
+      <div class="method-cell">
+        <div class="method-n">M · 01</div>
+        <h4>Empirical Rigor</h4>
+        <p>All claims are backed by controlled experiments with statistical significance testing, ablation studies, and reproducible baselines.</p>
+      </div>
+      <div class="method-cell">
+        <div class="method-n">M · 02</div>
+        <h4>Open Science</h4>
+        <p>Datasets, model checkpoints, and evaluation code released openly to accelerate community progress in multilingual and multimedia NLP.</p>
+      </div>
+      <div class="method-cell">
+        <div class="method-n">M · 03</div>
+        <h4>Interdisciplinary Collaboration</h4>
+        <p>Researchers from four universities contribute complementary expertise in linguistics, engineering, AI systems, and applied ML.</p>
+      </div>
+      <div class="method-cell">
+        <div class="method-n">M · 04</div>
+        <h4>Cloud-Scale Compute</h4>
+        <p>Google Cloud Research Credits enable large-scale model training and comprehensive evaluation sweeps across multilingual benchmarks.</p>
+      </div>
+      <div class="method-cell">
+        <div class="method-n">M · 05</div>
+        <h4>Low-resource Focus</h4>
+        <p>We prioritize underrepresented languages — especially Turkish and Turkic families — developing resources for communities with limited NLP tooling.</p>
+      </div>
+      <div class="method-cell">
+        <div class="method-n">M · 06</div>
+        <h4>Responsible AI</h4>
+        <p>Safety, fairness, and interpretability are embedded from research design through evaluation, with explicit bias audits on all released systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-body">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="ft-brand">
+            <img src="logo.png" alt="ANLAM-Net Lab logo" class="ft-logo-img" />
+            <div class="ft-logo-name">ANLAM-Net <span>Lab</span></div>
+          </div>
+          <p class="ft-desc">Advanced Natural Language and Multimedia Processing Laboratory. Department of Software Engineering, Ankara University, Turkey.</p>
+        </div>
+        <div>
+          <div class="ft-col-title">Pages</div>
+          <div class="ft-links">
+            <a href="index.html">Overview</a><a href="research.html">Research</a>
+            <a href="team.html">People</a><a href="publications.html">Publications</a>
+            <a href="news.html">News</a><a href="outreach.html">Outreach</a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">Research</div>
+          <div class="ft-links">
+            <a href="research.html">Large Language Models</a>
+            <a href="research.html">Sentiment Analysis</a>
+            <a href="research.html">Summarization</a>
+            <a href="research.html">Multimedia AI</a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">Contact</div>
+          <div class="ft-links">
+            <a href="mailto:anlamnet@ankara.edu.tr">anlamnet@ankara.edu.tr</a>
+            <a href="#">Ankara University</a>
+            <a href="#">Software Engineering Dept.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-rule"/>
+  <div class="wrap">
+    <div class="footer-base">
+      <p>© 2024 ANLAM-Net Lab · Ankara University</p>
+      <p>Dept. of Software Engineering · Ankara, Turkey</p>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

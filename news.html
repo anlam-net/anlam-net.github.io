@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News — ANLAM-Net Lab</title>
+  <meta name="description" content="Latest news and announcements from ANLAM-Net Lab — grants, publications, talks, collaborations, and lab milestones." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <img src="logo.png" alt="ANLAM-Net Lab logo" />
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">ANLAM-Net <span style="color:rgba(0,48,128,0.55);font-weight:500;">Lab</span></span>
+        <span class="nav-logo-sub">Ankara University</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="team.html">People</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html" class="active">News</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Overview</a><a href="research.html">Research</a>
+  <a href="team.html">People</a><a href="publications.html">Publications</a>
+  <a href="news.html" class="active">News</a><a href="outreach.html">Outreach</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <canvas id="pageCanvas" style="position:absolute;inset:0;opacity:0.25;"></canvas>
+  <div class="page-hero-geometry">
+    <svg style="position:absolute;right:-60px;bottom:-40px;width:340px;height:340px;" viewBox="0 0 340 340" fill="none">
+      <circle cx="170" cy="170" r="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <polygon points="170,20 295,232 45,232" stroke="rgba(255,255,255,0.06)" stroke-width="0.8" fill="none"/>
+      <circle cx="170" cy="170" r="104" stroke="rgba(255,255,255,0.035)" stroke-width="0.8"/>
+    </svg>
+  </div>
+  <div class="wrap page-hero-inner">
+    <p class="ph-kicker">ANLAM-Net Lab · Updates</p>
+    <h1 class="ph-title">News &amp; Announcements</h1>
+    <p class="ph-sub">Research milestones, grants, publications, talks, and collaborations from ANLAM-Net Lab.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-num">Latest</span>
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">Latest News</span>
+    </div>
+
+    <!-- News entries -->
+    <div class="reveal">
+      <div class="news-row">
+        <div class="news-meta">
+          <span class="news-date">20 May '25</span>
+          <span class="news-badge">Publication</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">Latest work on Turkish sentiment analysis with fine-tuned LLMs</div>
+          <div class="news-excerpt">Thrilled to share our latest work on improving Turkish Sentiment Analysis with fine-tuned LLMs. We combined GPT-based relabeling with LoRA fine-tuning on models such as Llama-3 and Gemma, achieving state-of-the-art results on Turkish e-commerce reviews and outperforming commercial LLMs by over 6%. Early Access Paper here: <a href="#" class="ilink">Link</a>.</div>
+        </div>
+      </div>
+
+      <div class="news-row">
+        <div class="news-meta">
+          <span class="news-date">12 Sep '24</span>
+          <span class="news-badge">Grant</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">Funded project by Deanship of Scientific Research (DSR), King Abdulaziz University</div>
+          <div class="news-excerpt">We are pleased to announce that our research project has been awarded funding by the Deanship of Scientific Research (DSR) at King Abdulaziz University under grant no. GPIP: 1789-612-2024. Team members: Assoc. Prof. Murat Karakus (Software Engineering, Ankara University), Dr. Rukiye Savran Kiziltepe (Software Engineering, Karadeniz Technical University), Dr. Ercan Ezin (Computer Engineering, Harran University), and Dr. Arwa Mohmmed Basbrain (Computer Science, King Abdulaziz University).</div>
+        </div>
+      </div>
+
+      <div class="news-row">
+        <div class="news-meta">
+          <span class="news-date">6 Sep '24</span>
+          <span class="news-badge">Grant</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">Google Cloud research credits awarded to ANLAM-Net Lab</div>
+          <div class="news-excerpt">Exciting news! ANLAM-Net Lab has been awarded Google Cloud research credits to support our cutting-edge NLP studies. This generous grant empowers our team to leverage state-of-the-art cloud computing resources for multimedia processing and sentiment analysis projects, enabling faster data processing, more complex model training, and more ambitious challenges in natural language understanding.</div>
+        </div>
+      </div>
+
+      <div class="news-row">
+        <div class="news-meta">
+          <span class="news-date">28 Aug '24</span>
+          <span class="news-badge">Milestone</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">ANLAM-Net Lab is born</div>
+          <div class="news-excerpt">ANLAM-Net Lab is officially born. Our team is excited to collaborate with industry leaders on a new project involving multimedia processing and sentiment analysis.</div>
+        </div>
+      </div>
+
+      <div class="news-row">
+        <div class="news-meta">
+          <span class="news-date">14 Aug '24</span>
+          <span class="news-badge">Publication</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">Second conference paper accepted for UBMK 2024</div>
+          <div class="news-excerpt">It is with great joy that we announce our second conference paper on Turkish NLP studies has been accepted for UBMK 2024, held in Antalya, Turkiye, between October 26-28, 2024.</div>
+        </div>
+      </div>
+
+      <div class="news-row" style="border-bottom:none;">
+        <div class="news-meta">
+          <span class="news-date">22 Jul '24</span>
+          <span class="news-badge">Submission</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">ASYU'24 submission accepted</div>
+          <div class="news-excerpt">We successfully submitted a new paper to ASYU'24. Update: the paper has been accepted. More information is available on the Publications page.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-body">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="ft-brand">
+            <img src="logo.png" alt="ANLAM-Net Lab logo" class="ft-logo-img" />
+            <div class="ft-logo-name">ANLAM-Net <span>Lab</span></div>
+          </div>
+          <p class="ft-desc">Advanced Natural Language and Multimedia Processing Laboratory. Department of Software Engineering, Ankara University, Turkey.</p>
+        </div>
+        <div>
+          <div class="ft-col-title">Pages</div>
+          <div class="ft-links">
+            <a href="index.html">Overview</a><a href="research.html">Research</a>
+            <a href="team.html">People</a><a href="publications.html">Publications</a>
+            <a href="news.html">News</a><a href="outreach.html">Outreach</a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">News</div>
+          <div class="ft-links">
+            <a href="news.html">Grants</a>
+            <a href="news.html">Publications</a>
+            <a href="news.html">Collaborations</a>
+            <a href="news.html">Talks</a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">Contact</div>
+          <div class="ft-links">
+            <a href="mailto:anlamnet@ankara.edu.tr">anlamnet@ankara.edu.tr</a>
+            <a href="#">Ankara University</a>
+            <a href="#">Software Engineering Dept.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-rule"/>
+  <div class="wrap">
+    <div class="footer-base">
+      <p>© 2024 ANLAM-Net Lab · Ankara University</p>
+      <p>Dept. of Software Engineering · Ankara, Turkey</p>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANLAM-Net Lab — Advanced Natural Language & Multimedia Processing Laboratory</title>
+  <meta name="description" content="Advanced Natural Language and Multimedia Processing Laboratory at Ankara University. Research in NLP, LLMs, sentiment analysis, and multimedia AI." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- ─── NAVBAR ──────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <img src="logo.png" alt="ANLAM-Net Lab logo" />
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">ANLAM-Net <span style="color:rgba(0,48,128,0.55);font-weight:500;">Lab</span></span>
+        <span class="nav-logo-sub">Ankara University</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Overview</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="team.html">People</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<nav class="mobile-menu">
+  <a href="index.html" class="active">Overview</a>
+  <a href="research.html">Research</a>
+  <a href="team.html">People</a>
+  <a href="publications.html">Publications</a>
+  <a href="news.html">News</a>
+  <a href="outreach.html">Outreach</a>
+</nav>
+
+<!-- ─── HERO ────────────────────────────────────────────────── -->
+<section class="hero">
+  <canvas id="neuralCanvas"></canvas>
+
+  <!-- Euclidean geometry layer -->
+  <div class="hero-geometry">
+    <svg class="geo-main" viewBox="0 0 700 700" fill="none">
+      <circle cx="350" cy="350" r="300" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="350" cy="350" r="210" stroke="rgba(255,255,255,0.035)" stroke-width="0.8"/>
+      <circle cx="350" cy="350" r="135" stroke="rgba(255,255,255,0.025)" stroke-width="0.8"/>
+      <!-- Inscribed triangle -->
+      <polygon points="350,50 601,475 99,475" stroke="rgba(255,255,255,0.07)" stroke-width="0.9" fill="none"/>
+      <!-- Medians -->
+      <line x1="350" y1="50"  x2="350" y2="475" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+      <line x1="601" y1="475" x2="224" y2="263" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+      <line x1="99"  y1="475" x2="476" y2="263" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/>
+      <!-- Golden rectangle -->
+      <rect x="192" y="192" width="316" height="196" stroke="rgba(255,255,255,0.04)" stroke-width="0.7" fill="none"/>
+      <!-- Pentagon -->
+      <polygon points="350,170 494,274 440,440 260,440 206,274" stroke="rgba(255,255,255,0.03)" stroke-width="0.6" fill="none"/>
+      <!-- Vertex dots -->
+      <circle cx="350" cy="50"  r="3" fill="rgba(255,255,255,0.06)"/>
+      <circle cx="601" cy="475" r="3" fill="rgba(255,255,255,0.06)"/>
+      <circle cx="99"  cy="475" r="3" fill="rgba(255,255,255,0.06)"/>
+    </svg>
+    <svg class="geo-accent" viewBox="0 0 280 280" fill="none">
+      <circle cx="140" cy="140" r="120" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+      <circle cx="140" cy="140" r="80"  stroke="rgba(255,255,255,0.04)" stroke-width="0.8"/>
+      <polygon points="140,20 244,200 36,200" stroke="rgba(255,255,255,0.07)" stroke-width="0.9" fill="none"/>
+      <line x1="140" y1="20" x2="140" y2="200" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+    </svg>
+  </div>
+
+  <!-- Floating math notation -->
+  <div class="hero-math-layer">
+    <div class="math-float f1">Attention(Q, K, V) = softmax(QKᵀ / √d_k) · V</div>
+    <div class="math-float f2">P(w_t | w_{t-1}, …, w_1) = ∏ P(w_i | w_{i-1})</div>
+    <div class="math-float f3">L(θ) = − Σ log P_θ(x_i | x_{&lt;i})</div>
+    <div class="math-float f4">h_t = σ(W_x · x_t + W_h · h_{t-1} + b)</div>
+    <div class="math-float f5">ŷ = softmax(W₂ · ReLU(W₁ · x + b₁) + b₂)</div>
+    <div class="math-float f6">∇_θ J(θ) = E_{(x,y)~D} [∇_θ log P_θ(y | x)]</div>
+  </div>
+
+  <!-- XAI decision tree (decorative) -->
+  <div style="position:absolute;right:5%;bottom:8%;z-index:1;opacity:0.065;pointer-events:none;">
+    <svg width="260" height="188" viewBox="0 0 260 188" fill="none">
+      <rect x="100" y="0"  width="60" height="26" rx="3" stroke="#A0B9FF" stroke-width="0.8"/>
+      <text x="130" y="17" text-anchor="middle" fill="#A0B9FF" font-family="JetBrains Mono" font-size="7.5">f(x) ≥ 0?</text>
+      <line x1="115" y1="26" x2="66"  y2="64" stroke="#A0B9FF" stroke-width="0.6"/>
+      <line x1="145" y1="26" x2="194" y2="64" stroke="#A0B9FF" stroke-width="0.6"/>
+      <rect x="36"  y="64" width="60" height="26" rx="3" stroke="#A0B9FF" stroke-width="0.8"/>
+      <text x="66"  y="81" text-anchor="middle" fill="#A0B9FF" font-family="JetBrains Mono" font-size="7.5">NLP?</text>
+      <rect x="164" y="64" width="60" height="26" rx="3" stroke="#A0B9FF" stroke-width="0.8"/>
+      <text x="194" y="81" text-anchor="middle" fill="#A0B9FF" font-family="JetBrains Mono" font-size="7.5">Sent.?</text>
+      <line x1="51"  y1="90" x2="28"  y2="128" stroke="#A0B9FF" stroke-width="0.5"/>
+      <line x1="81"  y1="90" x2="104" y2="128" stroke="#A0B9FF" stroke-width="0.5"/>
+      <line x1="179" y1="90" x2="156" y2="128" stroke="#A0B9FF" stroke-width="0.5"/>
+      <line x1="209" y1="90" x2="232" y2="128" stroke="#A0B9FF" stroke-width="0.5"/>
+      <rect x="0"   y="128" width="56" height="22" rx="2" fill="rgba(0,48,128,0.25)" stroke="#A0B9FF" stroke-width="0.6"/>
+      <text x="28"  y="143" text-anchor="middle" fill="#A0B9FF" font-family="JetBrains Mono" font-size="6.5">LLM</text>
+      <rect x="76"  y="128" width="56" height="22" rx="2" fill="rgba(0,48,128,0.25)" stroke="#A0B9FF" stroke-width="0.6"/>
+      <text x="104" y="143" text-anchor="middle" fill="#A0B9FF" font-family="JetBrains Mono" font-size="6.5">Summ.</text>
+      <rect x="128" y="128" width="56" height="22" rx="2" fill="rgba(0,48,128,0.25)" stroke="#A0B9FF" stroke-width="0.6"/>
+      <text x="156" y="143" text-anchor="middle" fill="#A0B9FF" font-family="JetBrains Mono" font-size="6.5">Multi.</text>
+      <rect x="204" y="128" width="56" height="22" rx="2" fill="rgba(0,48,128,0.25)" stroke="#A0B9FF" stroke-width="0.6"/>
+      <text x="232" y="143" text-anchor="middle" fill="#A0B9FF" font-family="JetBrains Mono" font-size="6.5">Gen.</text>
+    </svg>
+  </div>
+
+  <!-- Hero content -->
+  <div class="hero-content">
+    <p class="hero-kicker">Software Engineering · Ankara University · Est. 2024</p>
+
+    <h1 class="hero-h1">
+      Advanced<br/>
+      <span class="hero-accent">Natural Language</span><br/>
+      <span class="hero-dim">&amp; Multimedia Processing</span><br/>
+      <span class="hero-dim" style="font-size:0.6em;letter-spacing:-0.01em;">Laboratory</span>
+    </h1>
+
+    <p class="hero-tagline">
+      Fundamental and applied research at the intersection<br/>
+      of language, computation, and intelligence.
+    </p>
+
+    <!-- Glassmorphism stats card -->
+    <div class="glass-card">
+      <div class="glass-stats">
+        <div class="glass-stat">
+          <span class="glass-stat-n">5</span>
+          <span class="glass-stat-l">Researchers</span>
+        </div>
+        <div class="glass-stat">
+          <span class="glass-stat-n">6</span>
+          <span class="glass-stat-l">Research Areas</span>
+        </div>
+        <div class="glass-stat">
+          <span class="glass-stat-n">4</span>
+          <span class="glass-stat-l">Universities</span>
+        </div>
+        <div class="glass-stat">
+          <span class="glass-stat-n">2024</span>
+          <span class="glass-stat-l">Founded</span>
+        </div>
+      </div>
+      <div class="glass-badge">
+        <span class="badge-dot"></span>
+        Google Cloud Research Grant Recipient · Active
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+  </div>
+</section>
+
+<!-- ─── 01 · RESEARCH AREAS ──────────────────────────────────── -->
+<section class="sec">
+  <div class="wrap">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-num">01</span>
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">Research Areas</span>
+    </div>
+
+    <div class="bento reveal">
+      <!-- Featured: LLMs (spans 8) -->
+      <div class="bc bc-dark bc-8">
+        <!-- Euclidean decoration -->
+        <div class="bc-geo">
+          <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
+            <circle cx="80" cy="80" r="70" stroke="rgba(255,255,255,0.06)" stroke-width="0.8"/>
+            <circle cx="80" cy="80" r="48" stroke="rgba(255,255,255,0.04)" stroke-width="0.6"/>
+            <polygon points="80,10 142,121 18,121" stroke="rgba(255,255,255,0.07)" stroke-width="0.7" fill="none"/>
+          </svg>
+        </div>
+        <div class="bc-index">R · 01</div>
+        <h3>Large Language Models</h3>
+        <p>Advancing the adaptability, robustness, and efficiency of LLMs across diverse domains and languages. We study parameter-efficient fine-tuning, cross-lingual transfer, instruction-following, and LLM alignment — with particular focus on Turkish and morphologically complex languages.</p>
+        <div class="bc-tags">
+          <span class="bc-tag">Fine-tuning</span>
+          <span class="bc-tag">Cross-lingual</span>
+          <span class="bc-tag">Turkish NLP</span>
+          <span class="bc-tag">Instruction-following</span>
+          <span class="bc-tag">LLM Alignment</span>
+        </div>
+      </div>
+
+      <!-- Sentiment -->
+      <div class="bc bc-4">
+        <div class="bc-index">R · 02</div>
+        <h3>Sentiment &amp; Opinion Analysis</h3>
+        <p>Fine-grained multimodal opinion mining for Turkish and multilingual social media, reviews, and multimedia content. Combining text, visual, and acoustic cues for aspect-level analysis.</p>
+        <div class="bc-tags">
+          <span class="bc-tag">Aspect-level</span>
+          <span class="bc-tag">Multimodal</span>
+          <span class="bc-tag">Turkish</span>
+        </div>
+      </div>
+
+      <!-- Summarization -->
+      <div class="bc bc-5">
+        <div class="bc-index">R · 03</div>
+        <h3>Document Summarization</h3>
+        <p>Abstractive and hybrid summarization of long, complex, and multiple documents. Novel architectures for extreme multi-document and long-context NLP with hierarchical transformers.</p>
+        <div class="bc-tags">
+          <span class="bc-tag">Abstractive</span>
+          <span class="bc-tag">Multi-doc</span>
+          <span class="bc-tag">Long Context</span>
+        </div>
+      </div>
+
+      <!-- NLP Evaluation -->
+      <div class="bc bc-3">
+        <div class="bc-index">R · 04</div>
+        <h3>NLP Evaluation &amp; Robustness</h3>
+        <p>Comprehensive benchmarks and evaluation frameworks for robustness under distribution shift and adversarial conditions.</p>
+        <div class="bc-tags">
+          <span class="bc-tag">Benchmarks</span>
+          <span class="bc-tag">Adversarial</span>
+        </div>
+      </div>
+
+      <!-- Multimedia -->
+      <div class="bc bc-4">
+        <div class="bc-index">R · 05</div>
+        <h3>Multimedia Processing</h3>
+        <p>Cross-modal learning fusing text, image, audio, and video for visual QA, video captioning, and cross-modal retrieval tasks at scale.</p>
+        <div class="bc-tags">
+          <span class="bc-tag">Vision-Language</span>
+          <span class="bc-tag">Audio</span>
+          <span class="bc-tag">Retrieval</span>
+        </div>
+      </div>
+
+      <!-- Generation -->
+      <div class="bc bc-4">
+        <div class="bc-index">R · 06</div>
+        <h3>Content Generation</h3>
+        <p>Reliable, factual, and controllable text generation — hallucination reduction, factuality grounding, and domain-specific content synthesis with RAG pipelines.</p>
+        <div class="bc-tags">
+          <span class="bc-tag">Factuality</span>
+          <span class="bc-tag">RAG</span>
+          <span class="bc-tag">Controlled Gen.</span>
+        </div>
+      </div>
+
+      <div class="bc bc-8 bc-visual">
+        <img
+          src="https://curiocial.com/content/images/2023/10/eng_electric_deuce.jpg"
+          alt="Research visualization"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <div style="margin-top:20px;text-align:right;">
+      <a href="research.html" class="ilink" style="font-size:0.82rem;">Full research agenda →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 02 · SELECTED PUBLICATIONS ────────────────────────── -->
+<section class="sec sec-off">
+  <div class="wrap">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-num">02</span>
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">Selected Publications</span>
+    </div>
+
+    <div class="pub-header-row reveal">
+      <span>Year</span>
+      <span>Title &amp; Authors</span>
+      <span>Venue</span>
+      <span style="text-align:right">Links</span>
+    </div>
+
+    <div class="reveal">
+      <div class="pub-row">
+        <div class="pub-yr">2026</div>
+        <div class="pub-main">
+          <div class="pub-title">A White-Box Benchmark for Intrinsic Hallucination Detection in Turkish LLMs</div>
+          <div class="pub-authors">Bayramoglu, B., Ficici, M., Bildirici, F., Savran Kiziltepe, R., &amp; Karakus, M.</div>
+          <div class="pub-venue-line"><strong>IISEC 2026</strong> · V. International Informatics and Software Engineering Conference</div>
+        </div>
+        <div class="pub-kind">Conference</div>
+        <div class="pub-acts">
+          <a href="publications.html" class="pub-act-link">Details</a>
+        </div>
+      </div>
+
+      <div class="pub-row">
+        <div class="pub-yr">2025</div>
+        <div class="pub-main">
+          <div class="pub-title">FLUXAI: Layered Explainability for Human-Centered Understanding via Feynman's Approach</div>
+          <div class="pub-authors">Bildirici, F., Savran Kiziltepe, R., &amp; Karakus, M.</div>
+          <div class="pub-venue-line"><strong>HCI-E 2025</strong> · 4th Eurasian Conference on Human-Computer Interaction</div>
+        </div>
+        <div class="pub-kind">Conference</div>
+        <div class="pub-acts">
+          <a href="publications.html" class="pub-act-link">Details</a>
+        </div>
+      </div>
+
+      <div class="pub-row" style="border-bottom:none;">
+        <div class="pub-yr">2025</div>
+        <div class="pub-main">
+          <div class="pub-title">Advancing Sentiment Analysis for Low-Resource Languages Using Fine-Tuned LLMs: A Case Study of Customer Reviews in Turkish Language</div>
+          <div class="pub-authors">Savran Kiziltepe, R., Ezin, E., Yentur, O., Basbrain, A. M., &amp; Karakus, M.</div>
+          <div class="pub-venue-line"><strong>IEEE Access</strong> · Vol. 13, pp. 77382-77394</div>
+        </div>
+        <div class="pub-kind">Journal</div>
+        <div class="pub-acts">
+          <a href="https://doi.org/10.1109/ACCESS.2025.3566000" class="pub-act-link" target="_blank" rel="noopener noreferrer">DOI</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;text-align:right;">
+      <a href="publications.html" class="ilink" style="font-size:0.82rem;">All publications →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 03 · PEOPLE ───────────────────────────────────────── -->
+<section class="sec">
+  <div class="wrap">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-num">03</span>
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">People</span>
+    </div>
+
+    <div class="team-grid reveal">
+      <!-- PI — spans 2 cols -->
+      <div class="tc tc-pi">
+        <div class="portrait">
+          <div class="portrait-ring"></div>
+          <img
+            class="portrait-img"
+            src="https://avesis.ankara.edu.tr/user/image/104227"
+            alt="Assoc. Prof. Murat Karakuş"
+          />
+        </div>
+        <div class="tc-role">Principal Investigator</div>
+        <div class="tc-name">Assoc. Prof. Murat Karakuş</div>
+        <div class="tc-affil">Dept. of Software Engineering<br/>Ankara University, Turkey</div>
+        <div class="tc-tags">
+          <span class="tc-tag">NLP</span>
+          <span class="tc-tag">LLMs</span>
+          <span class="tc-tag">Multimedia AI</span>
+          <span class="tc-tag">Turkish NLP</span>
+        </div>
+        <div class="tc-links">
+          <a href="mailto:mrtkarakus@ankara.edu.tr" class="tc-link">Email</a>
+          <a href="https://avesis.ankara.edu.tr/mrtkarakus" class="tc-link" target="_blank" rel="noopener noreferrer">Web</a>
+          <a href="https://scholar.google.com/citations?user=fGkZEUsAAAAJ&hl=en&oi=ao" class="tc-link" target="_blank" rel="noopener noreferrer">Scholar</a>
+        </div>
+      </div>
+
+      <div class="tc tc-pi">
+        <div class="portrait">
+          <div class="portrait-ring"></div>
+          <img
+            class="portrait-img"
+            src="https://avesis.ankara.edu.tr/user/image/105142"
+            alt="Dr. Rukiye Savran Kızıltepe"
+          />
+        </div>
+        <div class="tc-role">Principal Investigator</div>
+        <div class="tc-name">Dr. Rukiye Savran Kızıltepe</div>
+        <div class="tc-affil">Dept. of Software Engineering<br/>Ankara University, Turkey</div>
+        <div class="tc-tags">
+          <span class="tc-tag">Machine Learning</span>
+          <span class="tc-tag">Applied NLP</span>
+          <span class="tc-tag">Turkish Sentiment Analysis</span>
+        </div>
+        <div class="tc-links">
+          <a href="mailto:rukiyekiziltepe@ankara.edu.tr" class="tc-link">Email</a>
+          <a href="https://avesis.ankara.edu.tr/rskiziltepe" class="tc-link" target="_blank" rel="noopener noreferrer">Web</a>
+          <a href="https://scholar.google.com/citations?user=IdicMRsAAAAJ&hl=en" class="tc-link" target="_blank" rel="noopener noreferrer">Scholar</a>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="portrait">
+          <div class="portrait-ring"></div>
+          <img
+            class="portrait-img"
+            src="https://s3.us-east-1.amazonaws.com/fi-hatchbox-production-uploads/users/3192731.jpeg"
+            alt="Fatih Bildirici"
+          />
+        </div>
+        <div class="tc-role">PhD Candidate · AI Research Fellow</div>
+        <div class="tc-name">Fatih Bildirici</div>
+        <div class="tc-affil">PhD Candidate in Artificial Intelligence</div>
+        <div class="tc-tags">
+          <span class="tc-tag">Explainable AI</span>
+          <span class="tc-tag">LLM Evaluation</span>
+          <span class="tc-tag">Turkish NLP</span>
+        </div>
+        <div class="tc-links">
+          <a href="mailto:anlamnet@ankara.edu.tr" class="tc-link">Email</a>
+          <a href="https://fatihbildirici.com" class="tc-link" target="_blank" rel="noopener noreferrer">Website</a>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="portrait">
+          <div class="portrait-ring"></div>
+          <img
+            class="portrait-img"
+            src="berkay.jpeg"
+            alt="Berkay Bayramoğlu"
+          />
+        </div>
+        <div class="tc-role">Undergraduate Researcher</div>
+        <div class="tc-name">Berkay Bayramoğlu</div>
+        <div class="tc-affil">Dept. of Software Engineering<br/>Ankara University, Turkey</div>
+        <div class="tc-links">
+          <a href="https://github.com/Berkaybbayramoglu" class="tc-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/berkaybayramoglu/" class="tc-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="tc">
+        <div class="portrait">
+          <div class="portrait-ring"></div>
+          <img
+            class="portrait-img"
+            src="https://media.licdn.com/dms/image/v2/D4D03AQE526UR5G5nkQ/profile-displayphoto-scale_200_200/B4DZii8WzGHwAY-/0/1755080393292?e=2147483647&v=beta&t=EaVxEsd9TWvwsfpHkUIi6PSPG2GP2tIvTfogNt3V7ok"
+            alt="Mert Fıçıcı"
+          />
+        </div>
+        <div class="tc-role">Undergraduate Researcher</div>
+        <div class="tc-name">Mert Fıçıcı</div>
+        <div class="tc-affil">Dept. of Software Engineering<br/>Ankara University, Turkey</div>
+        <div class="tc-links">
+          <a href="https://www.linkedin.com/in/mert-ficici/" class="tc-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:20px;text-align:right;">
+      <a href="team.html" class="ilink" style="font-size:0.82rem;">Full team →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 04 · NEWS ──────────────────────────────────────────── -->
+<section class="sec sec-off">
+  <div class="wrap">
+    <div class="eyebrow reveal">
+      <span class="eyebrow-num">04</span>
+      <span class="eyebrow-rule"></span>
+      <span class="eyebrow-label">News &amp; Updates</span>
+    </div>
+
+    <div class="news-list reveal">
+      <div class="news-row">
+        <div class="news-meta">
+          <span class="news-date">20 May '25</span>
+          <span class="news-badge">Publication</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">Latest work on Turkish sentiment analysis with fine-tuned LLMs</div>
+          <div class="news-excerpt">GPT-based relabeling and LoRA fine-tuning on Llama-3 and Gemma achieved state-of-the-art performance on Turkish e-commerce reviews, outperforming commercial LLMs by over 6%.</div>
+        </div>
+      </div>
+
+      <div class="news-row">
+        <div class="news-meta">
+          <span class="news-date">12 Sep '24</span>
+          <span class="news-badge">Grant</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">DSR-funded project awarded (GPIP: 1789-612-2024)</div>
+          <div class="news-excerpt">Our project was awarded funding by the Deanship of Scientific Research at King Abdulaziz University with collaborators from Ankara University, Karadeniz Technical University, Harran University, and King Abdulaziz University.</div>
+        </div>
+      </div>
+
+      <div class="news-row" style="border-bottom:none;">
+        <div class="news-meta">
+          <span class="news-date">6 Sep '24</span>
+          <span class="news-badge">Grant</span>
+        </div>
+        <div class="news-body">
+          <div class="news-title">Google Cloud research credits awarded to ANLAM-Net Lab</div>
+          <div class="news-excerpt">The grant supports state-of-the-art cloud resources for multimedia processing and sentiment analysis, enabling faster pipelines and more ambitious NLP research.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;text-align:right;">
+      <a href="news.html" class="ilink" style="font-size:0.82rem;">All news →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AFFILIATION STRIP ─────────────────────────────────── -->
+<div class="affil-strip">
+  <div class="affil-inner">
+    <div class="affil-logo-wrap">
+      <img src="ankaralogo.png" alt="Ankara University logo" class="affil-logo" />
+    </div>
+    <div class="affil-logo-wrap">
+      <img src="logo.png" alt="ANLAM-Net Lab logo" class="affil-logo affil-logo-lab" />
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-body">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="ft-brand">
+            <img src="logo.png" alt="ANLAM-Net Lab logo" class="ft-logo-img" />
+            <div class="ft-logo-name">ANLAM-Net <span>Lab</span></div>
+          </div>
+          <p class="ft-desc">Advanced Natural Language and Multimedia Processing Laboratory. Department of Software Engineering, Ankara University, Turkey.</p>
+        </div>
+        <div>
+          <div class="ft-col-title">Pages</div>
+          <div class="ft-links">
+            <a href="index.html">Overview</a>
+            <a href="research.html">Research</a>
+            <a href="team.html">People</a>
+            <a href="publications.html">Publications</a>
+            <a href="news.html">News</a>
+            <a href="outreach.html">Outreach</a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">Research</div>
+          <div class="ft-links">
+            <a href="research.html">Large Language Models</a>
+            <a href="research.html">Sentiment Analysis</a>
+            <a href="research.html">Summarization</a>
+            <a href="research.html">Multimedia AI</a>
+            <a href="research.html">NLP Evaluation</a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">Contact</div>
+          <div class="ft-links">
+            <a href="mailto:anlamnet@ankara.edu.tr">anlamnet@ankara.edu.tr</a>
+            <a href="#">Ankara University</a>
+            <a href="#">Software Engineering Dept.</a>
+            <a href="#">Ankara, Turkey</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-rule"/>
+  <div class="wrap">
+    <div class="footer-base">
+      <p>© 2024 ANLAM-Net Lab · Ankara University</p>
+      <p>Dept. of Software Engineering · Ankara, Turkey</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

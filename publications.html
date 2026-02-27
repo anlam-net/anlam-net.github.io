@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications — ANLAM-Net Lab</title>
+  <meta name="description" content="Publications from ANLAM-Net Lab — peer-reviewed papers on NLP, large language models, sentiment analysis, summarization, and multimodal AI." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-mark">
+        <img src="logo.png" alt="ANLAM-Net Lab logo" />
+      </div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">ANLAM-Net <span style="color:rgba(0,48,128,0.55);font-weight:500;">Lab</span></span>
+        <span class="nav-logo-sub">Ankara University</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="team.html">People</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="outreach.html">Outreach</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Overview</a><a href="research.html">Research</a>
+  <a href="team.html">People</a><a href="publications.html" class="active">Publications</a>
+  <a href="news.html">News</a><a href="outreach.html">Outreach</a>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <canvas id="pageCanvas" style="position:absolute;inset:0;opacity:0.25;"></canvas>
+  <div class="page-hero-geometry">
+    <svg style="position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:340px;height:340px;" viewBox="0 0 340 340" fill="none">
+      <circle cx="170" cy="170" r="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <circle cx="170" cy="170" r="104" stroke="rgba(255,255,255,0.035)" stroke-width="0.8"/>
+      <polygon points="170,20 295,233 45,233" stroke="rgba(255,255,255,0.06)" stroke-width="0.8" fill="none"/>
+      <rect x="90" y="90" width="160" height="100" stroke="rgba(255,255,255,0.04)" stroke-width="0.6" fill="none"/>
+    </svg>
+  </div>
+  <div class="wrap page-hero-inner">
+    <p class="ph-kicker">ANLAM-Net Lab · Academic Output</p>
+    <h1 class="ph-title">Publications</h1>
+    <p class="ph-sub">Peer-reviewed research in NLP, large language models, sentiment analysis, summarization, and multimodal AI.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+
+    <!-- Stats grid -->
+    <div class="pub-stat-grid reveal">
+      <div class="pub-stat-cell">
+        <div class="pub-stat-n">5</div>
+        <div class="pub-stat-l">Publications</div>
+      </div>
+      <div class="pub-stat-cell">
+        <div class="pub-stat-n">4</div>
+        <div class="pub-stat-l">Conference Papers</div>
+      </div>
+      <div class="pub-stat-cell">
+        <div class="pub-stat-n">1</div>
+        <div class="pub-stat-l">Journal Article</div>
+      </div>
+      <div class="pub-stat-cell">
+        <div class="pub-stat-n">2026</div>
+        <div class="pub-stat-l">Latest Year</div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="reveal" style="margin-bottom:24px;">
+      <input id="pubSearch" type="search" placeholder="Search publications…"
+        style="width:100%;max-width:440px;border:1px solid var(--slate-200);border-radius:5px;
+               padding:10px 16px;font-family:var(--mono);font-size:0.8rem;color:var(--slate-900);
+               background:var(--white);outline:none;transition:border-color 0.15s;"
+        onfocus="this.style.borderColor='var(--navy)'"
+        onblur="this.style.borderColor='var(--slate-200)'"/>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="journal">Journal</button>
+      <button class="filter-btn" data-filter="conference">Conference</button>
+    </div>
+
+    <!-- Publication list -->
+    <div class="reveal">
+      <div class="pub-header-row">
+        <span>Year</span>
+        <span>Title &amp; Authors</span>
+        <span>Venue</span>
+        <span style="text-align:right">Links</span>
+      </div>
+
+      <div class="pub-row" data-fk="conference">
+        <div class="pub-yr">2026</div>
+        <div class="pub-main">
+          <div class="pub-title">A White-Box Benchmark for Intrinsic Hallucination Detection in Turkish LLMs</div>
+          <div class="pub-authors">Bayramoglu, B., Ficici, M., Bildirici, F., Savran Kiziltepe, R., &amp; Karakus, M.</div>
+          <div class="pub-venue-line"><strong>IISEC 2026 V. International Informatics and Software Engineering Conference</strong></div>
+        </div>
+        <div class="pub-kind">Conference</div>
+        <div class="pub-acts"></div>
+      </div>
+
+      <div class="pub-row" data-fk="conference">
+        <div class="pub-yr">2025</div>
+        <div class="pub-main">
+          <div class="pub-title">FLUXAI: Layered Explainability for Human-Centered Understanding via Feynman's Approach</div>
+          <div class="pub-authors">Bildirici, F., Savran Kiziltepe, R., &amp; Karakus, M.</div>
+          <div class="pub-venue-line"><strong>4th Eurasian Conference on Human-Computer Interaction (HCI-E 2025)</strong> · Baku, Azerbaijan · 5-6 December 2025 · Full Text</div>
+        </div>
+        <div class="pub-kind">Conference</div>
+        <div class="pub-acts"></div>
+      </div>
+
+      <div class="pub-row" data-fk="journal">
+        <div class="pub-yr">2025</div>
+        <div class="pub-main">
+          <div class="pub-title">Advancing Sentiment Analysis for Low-Resource Languages Using Fine-Tuned LLMs: A Case Study of Customer Reviews in Turkish Language</div>
+          <div class="pub-authors">Savran Kiziltepe, R., Ezin, E., Yentur, Ö., Basbrain, A. M., &amp; Karakus, M.</div>
+          <div class="pub-venue-line"><strong>IEEE Access</strong> · Vol. 13, pp. 77382-77394 · SCI-E Indexed Journal</div>
+        </div>
+        <div class="pub-kind">Journal</div>
+        <div class="pub-acts">
+          <a href="https://doi.org/10.1109/ACCESS.2025.3566000" class="pub-act-link" target="_blank" rel="noopener noreferrer">DOI</a>
+        </div>
+      </div>
+
+      <div class="pub-row" data-fk="conference">
+        <div class="pub-yr">2024</div>
+        <div class="pub-main">
+          <div class="pub-title">Using LLMs for Annotation and ML Methods for Comparative Analysis of Large-Scale Turkish Sentiment Datasets</div>
+          <div class="pub-authors">Ezin, E., Savran Kiziltepe, R., &amp; Karakus, M.</div>
+          <div class="pub-venue-line"><strong>9th International Conference on Computer Science and Engineering (UBMK 2024)</strong> · Antalya, Turkiye</div>
+        </div>
+        <div class="pub-kind">Conference</div>
+        <div class="pub-acts"></div>
+      </div>
+
+      <div class="pub-row" data-fk="conference" style="border-bottom:none;">
+        <div class="pub-yr">2024</div>
+        <div class="pub-main">
+          <div class="pub-title">A Comparative Study of ML Models on Large-Scale Turkish Sentiment Datasets</div>
+          <div class="pub-authors">Savran Kiziltepe, R., Ezin, E., &amp; Karakus, M.</div>
+          <div class="pub-venue-line"><strong>Innovations in Intelligent Systems and Applications Conference (ASYU 2024)</strong> · Ankara, Turkiye</div>
+        </div>
+        <div class="pub-kind">Conference</div>
+        <div class="pub-acts"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-body">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="ft-brand">
+            <img src="logo.png" alt="ANLAM-Net Lab logo" class="ft-logo-img" />
+            <div class="ft-logo-name">ANLAM-Net <span>Lab</span></div>
+          </div>
+          <p class="ft-desc">Advanced Natural Language and Multimedia Processing Laboratory. Department of Software Engineering, Ankara University, Turkey.</p>
+        </div>
+        <div>
+          <div class="ft-col-title">Pages</div>
+          <div class="ft-links">
+            <a href="index.html">Overview</a><a href="research.html">Research</a>
+            <a href="team.html">People</a><a href="publications.html">Publications</a>
+            <a href="news.html">News</a><a href="outreach.html">Outreach</a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">By Topic</div>
+          <div class="ft-links">
+            <a href="publications.html">Large Language Models</a>
+            <a href="publications.html">Sentiment Analysis</a>
+            <a href="publications.html">Summarization</a>
+            <a href="publications.html">Turkish NLP</a>
+          </div>
+        </div>
+        <div>
+          <div class="ft-col-title">Contact</div>
+          <div class="ft-links">
+            <a href="mailto:anlamnet@ankara.edu.tr">anlamnet@ankara.edu.tr</a>
+            <a href="#">Ankara University</a>
+            <a href="#">Software Engineering Dept.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-rule"/>
+  <div class="wrap">
+    <div class="footer-base">
+      <p>© 2024 ANLAM-Net Lab · Ankara University</p>
+      <p>Dept. of Software Engineering · Ankara, Turkey</p>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
