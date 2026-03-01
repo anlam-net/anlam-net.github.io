@@ -307,7 +307,8 @@ ul { list-style: none; }
 
 /* ─── Glassmorphism Card ───────────────────────────────────── */
 .glass-card {
-  display: inline-flex; flex-direction: column; gap: 22px;
+  display: flex; flex-direction: column; gap: 22px;
+  width: min(100%, 760px);
   background: var(--glass-bg);
   backdrop-filter: blur(32px) saturate(200%);
   -webkit-backdrop-filter: blur(32px) saturate(200%);
@@ -363,6 +364,7 @@ ul { list-style: none; }
   display: flex; align-items: center; gap: 10px;
   font-family: var(--mono); font-size: 0.59rem; font-weight: 400;
   color: rgba(255,255,255,0.42); letter-spacing: 0.05em;
+  flex-wrap: wrap;
 }
 .badge-dot {
   width: 7px; height: 7px; border-radius: 50%;
@@ -1317,8 +1319,26 @@ footer {
 
   .hero-h1 { font-size: 2.6rem; }
   .hero-content { padding-inline: 24px; }
-  .glass-stats { flex-wrap: wrap; }
-  .glass-stat { border-right: none; padding: 8px 0; }
+  .glass-card { width: 100%; padding: 18px; gap: 14px; }
+  .glass-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .glass-stat {
+    border-right: none;
+    padding: 10px 12px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+  }
+  .glass-stat:first-child,
+  .glass-stat:last-child { padding-left: 12px; }
+  .glass-badge {
+    font-size: 0.55rem;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+  }
 
   .bento { gap: 8px; background: transparent; border: none; border-radius: 0; }
   .bc { border: 1px solid var(--slate-200); border-radius: 8px; }
@@ -1362,4 +1382,10 @@ footer {
   .affil-logo-wrap { min-width: 150px; padding: 6px 10px; }
   .affil-logo { height: 44px; }
   .affil-logo-lab { height: 50px; }
+}
+
+@media (max-width: 420px) {
+  .glass-stats { grid-template-columns: 1fr; }
+  .glass-stat { padding: 10px; }
+  .glass-stat-n { font-size: 1.28rem; }
 }
