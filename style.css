@@ -297,6 +297,7 @@ ul { list-style: none; }
   background-clip: text;
 }
 
+
 .hero-tagline {
   font-size: 0.92rem; font-weight: 500;
   color: rgba(255, 255, 255, 0.38);
@@ -593,7 +594,7 @@ ul { list-style: none; }
 .tc:hover { background: var(--surface); }
 
 .tc.tc-pi {
-  grid-column: span 2;
+  grid-column: span 1;
   background: var(--navy);
 }
 .tc.tc-pi:hover { background: var(--navy-mid); }
@@ -737,6 +738,56 @@ ul { list-style: none; }
 .news-body {}
 .news-title { font-size: 0.9rem; font-weight: 700; color: var(--slate-900); margin-bottom: 8px; line-height: 1.4; letter-spacing: -0.005em; }
 .news-excerpt { font-size: 0.82rem; color: var(--slate-500); line-height: 1.72; }
+
+/* LinkedIn notice under Latest News */
+.news-li-callout {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(145deg, #002060 0%, #001845 100%);
+  border: 1px solid rgba(145,180,255,0.28);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+}
+.news-li-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.10);
+  display: grid;
+  place-items: center;
+}
+.news-li-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: #fff;
+}
+.news-li-body { display: flex; flex-direction: column; gap: 8px; }
+.news-li-text {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.86);
+  line-height: 1.65;
+}
+.news-li-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.news-li-links a {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.26);
+  border-radius: 3px;
+  padding: 4px 8px;
+  transition: all var(--t) var(--ease);
+}
+.news-li-links a:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.72);
+  background: rgba(255,255,255,0.12);
+}
 
 /* ─── Filter bar ───────────────────────────────────────────── */
 .filter-bar {
@@ -963,6 +1014,36 @@ footer {
   transition: color var(--t) var(--ease);
 }
 .ft-links a:hover { color: rgba(255,255,255,0.96); }
+.ft-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.ft-social-link {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.34);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.96);
+  transition: border-color var(--t) var(--ease), background var(--t) var(--ease), transform var(--t) var(--ease), box-shadow var(--t) var(--ease);
+}
+.ft-social-link svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+.ft-social-link:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.08);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.18) inset;
+  transform: translateY(-1px);
+}
 .footer-rule { border: none; border-top: 1px solid rgba(255,255,255,0.10); }
 .footer-base {
   padding: 20px 0; display: flex;
@@ -1175,7 +1256,7 @@ footer {
   .bc-4  { grid-column: span 6; }
   .bc-3  { grid-column: span 6; }
   .team-grid { grid-template-columns: 1fr 1fr; }
-  .tc.tc-pi { grid-column: span 2; }
+  .tc.tc-pi { grid-column: span 1; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
 }
 
@@ -1201,7 +1282,7 @@ footer {
   .pub-header-row { display: none; }
   .pub-row { grid-template-columns: 1fr; gap: 8px; }
   .pub-acts { flex-direction: row; align-items: flex-start; }
-
+  .news-li-callout { align-items: flex-start; }
   .team-grid { grid-template-columns: 1fr; }
   .tc.tc-pi { grid-column: span 1; }
 
