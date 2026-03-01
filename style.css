@@ -842,24 +842,34 @@ ul { list-style: none; }
 .outreach-gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 8px;
+  background: var(--slate-200);
+  border: 1px solid var(--slate-200);
+  border-radius: 10px;
+  overflow: hidden;
 }
 .og-card {
   margin: 0;
-  border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--slate-200);
   background: var(--white);
-  box-shadow: var(--shadow-sm);
+  transition: background var(--t) var(--ease), transform var(--t) var(--ease);
   min-height: 0;
+}
+.og-card:hover {
+  background: var(--surface);
+  transform: translateY(-1px);
 }
 .og-img {
   width: 100%;
   aspect-ratio: 16 / 10;
   height: auto;
   object-fit: cover;
+  object-position: center center;
   display: block;
+}
+.og-img-face {
+  object-position: center 20%;
 }
 
 /* ─── Open Positions ───────────────────────────────────────── */
